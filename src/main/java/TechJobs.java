@@ -56,7 +56,6 @@ public class TechJobs {
 
                 // How does the user want to search (e.g. by skill or employer)
                 String searchField = getUserSelection("Search by:", columnChoices);
-
                 // What is their search term?
                 System.out.println("\nSearch term:");
                 String searchTerm = in.nextLine();
@@ -119,7 +118,7 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
-        if(someJobs==null){
+        if(someJobs==null || someJobs.isEmpty()){
             System.out.print("No Results");
             return;
         }
@@ -127,6 +126,6 @@ public class TechJobs {
             System.out.println(job.values());
         }
 
-        System.out.println("printJobs is not implemented yet");
+//        System.out.println("printJobs is not implemented yet");
     }
 }
