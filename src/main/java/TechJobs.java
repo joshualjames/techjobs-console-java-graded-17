@@ -10,7 +10,7 @@ public class TechJobs {
 
     static Scanner in = new Scanner(System.in);
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
 
         // Initialize our field map with key/name pairs
         HashMap<String, String> columnChoices = new HashMap<>();
@@ -111,21 +111,34 @@ public class TechJobs {
                 validChoice = true;
             }
 
-        } while(!validChoice);
+        } while (!validChoice);
 
         return choiceKeys[choiceIdx];
     }
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
-        if(someJobs==null || someJobs.isEmpty()){
+        if (someJobs == null || someJobs.isEmpty()) {
             System.out.print("No Results");
             return;
         }
-        for (HashMap<String, String> job: someJobs){
-            System.out.println(job.values());
+        for (HashMap<String, String> job : someJobs) {
+//            System.out.println(job.values());
+            System.out.println(
+                            "\n*****\n" +
+                            "position type: " + job.get("position type") + "\n"
+                            + "name: " + job.get("name") + "\n"
+                            + "employer: " + job.get("employer") + "\n"
+                            + "location: " + job.get("location") + "\n"
+                            + "core competency: " + job.get("core competency") + "\n"
+                            + "*****"
+            );
         }
 
 //        System.out.println("printJobs is not implemented yet");
     }
+
+//   public String toString(){
+//        return "\n*****\nposition type:" +
+//   }
 }
